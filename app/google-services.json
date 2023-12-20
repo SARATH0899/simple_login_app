@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "393852060034",
+    "project_id": "simple-login-app-cf3bb",
+    "storage_bucket": "simple-login-app-cf3bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393852060034:android:23ad1d28477682b2f7cf9b",
+        "android_client_info": {
+          "package_name": "com.example.simple_login_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_6h73Ezl_jlh_COc-PDO9QLlifmOzagM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
