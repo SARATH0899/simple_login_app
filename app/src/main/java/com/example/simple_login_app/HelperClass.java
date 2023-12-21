@@ -2,7 +2,7 @@ package com.example.simple_login_app;
 
 public class HelperClass {
 
-    String name, email, username, password;
+    String name, email, mobile, username, password, confirmPassword;
 
     public String getName() {
         return name;
@@ -18,6 +18,14 @@ public class HelperClass {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
     public String getUsername() {
@@ -36,11 +44,21 @@ public class HelperClass {
         this.password = password;
     }
 
-    public HelperClass(String name, String email, String username, String password) {
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+
+    public HelperClass(String name, String email, String mobile, String username, String password, String confirmPassword) {
         this.name = name;
         this.email = email;
+        this.mobile = mobile;
         this.username = username;
         this.password = password;
+        this.confirmPassword = confirmPassword;
     }
 
     public HelperClass() {

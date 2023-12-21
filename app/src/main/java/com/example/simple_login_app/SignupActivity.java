@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SignupActivity extends AppCompatActivity {
 
-    EditText signupName, signupEmail, signupUsername,signupPassword;
+    EditText signupName, signupEmail, signupMobile, signupUsername,signupPassword, signupConfirmPassword;
     TextView loginRedirectText;
     Button signupButton;
     FirebaseDatabase database;
@@ -29,8 +29,10 @@ public class SignupActivity extends AppCompatActivity {
 
         signupName = findViewById(R.id.signup_name);
         signupEmail = findViewById(R.id.signup_email);
+        signupMobile = findViewById(R.id.signup_mobile);
         signupUsername = findViewById(R.id.signup_username);
         signupPassword = findViewById(R.id.signup_password);
+        signupConfirmPassword = findViewById(R.id.signup_confirmPassword);
         loginRedirectText = findViewById(R.id.loginRedirectText);
         signupButton = findViewById(R.id.signup_button);
 
@@ -40,10 +42,13 @@ public class SignupActivity extends AppCompatActivity {
 
                 String name = signupName.getText().toString();
                 String email = signupEmail.getText().toString();
+                String mobile = signupMobile.getText().toString();
                 String username = signupUsername.getText().toString();
                 String password = signupPassword.getText().toString();
+                String confirmPassword = signupConfirmPassword.getText().toString();
 
-                if(name.isEmpty() || email.isEmpty() || username.isEmpty() || password.isEmpty()) {
+                if(name.isEmpty() || email.isEmpty() || mobile.isEmpty() || username.isEmpty() ||
+                        password.isEmpty() || confirmPassword.isEmpty()) {
                     Toast.makeText(SignupActivity.this, "Please Enter a Valid Credentials to Register",
                             Toast.LENGTH_SHORT).show();
                 }else {
@@ -51,7 +56,7 @@ public class SignupActivity extends AppCompatActivity {
                     database = FirebaseDatabase.getInstance();
                     reference = database.getReference("Users");
 
-                    HelperClass helperClass = new HelperClass(name, email, username, password);
+                    HelperClass helperClass = new HelperClass(name, email, mobile, username, password, confirmPassword);
                     reference.child(username).setValue(helperClass);
 
                     Toast.makeText(SignupActivity.this, "You Have Successfully Signed Up!",
